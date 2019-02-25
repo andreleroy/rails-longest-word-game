@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="letter-list">
+    <ul>
+      <% params[:array_of_letters].split().each do |letter| %>
+        <li class="inline"><%= letter %></li>
+      <% end %>
+    </ul>
+  </div>
+  <%= @answer  %>
+  <div class="score-tracker">
+    <p>Score:</p>
+    <%= session[:score]  %>
+  </div>
+  <button class="reset-btn">
+    <%= link_to 'Reset score', reset_path  %>
+  </button>
+  <button class = "play-btn">
+    <%= link_to 'Play again', new_path  %>
+  </button>
+</div>
